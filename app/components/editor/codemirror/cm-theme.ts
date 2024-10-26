@@ -7,7 +7,7 @@ import type { EditorSettings } from './CodeMirrorEditor.js';
 export const darkTheme = EditorView.theme({}, { dark: true });
 export const themeSelection = new Compartment();
 
-export function getTheme(theme: Theme, settings: EditorSettings = {}): Extension {
+export function getTheme(theme: Theme = 'dark', settings: EditorSettings = {}): Extension {
   return [
     getEditorTheme(settings),
     theme === 'dark' ? themeSelection.of([getDarkTheme()]) : themeSelection.of([getLightTheme()]),
