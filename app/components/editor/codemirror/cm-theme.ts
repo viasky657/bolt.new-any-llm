@@ -14,10 +14,14 @@ export function getTheme(theme: Theme = 'dark', settings: EditorSettings = {}): 
   ];
 }
 
+export function reconfigureTheme(theme: Theme = 'dark') {
+  return themeSelection.reconfigure(getDarkTheme());
+}
+/*
 export function reconfigureTheme(theme: Theme) {
   return themeSelection.reconfigure(theme === 'dark' ? getDarkTheme() : getLightTheme());
 }
-
+*/
 function getEditorTheme(settings: EditorSettings) {
   return EditorView.theme({
     '&': {
